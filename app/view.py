@@ -1,2 +1,4 @@
+from flask import render_template
+
 def index():
-  return 'Welcome to face recognition from Views'
+  return render_template('base.html')
