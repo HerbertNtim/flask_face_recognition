@@ -1,6 +1,5 @@
-import numpy as np
+import numpy as np 
 import pandas as pd
-import sklearn
 import pickle
 
 import matplotlib.pyplot as plt
@@ -19,7 +18,6 @@ def faceRecognitionPipeline(filepath, path = True):
         img = cv2.imread(filepath)
     else:
         img = filepath # Array
-
 
     # Step 02 - Convert Image into gray Scale
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
