@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import cv2
 
 # Load the models
-haar = cv2.CascadeClassifier('/model/haarcascade_frontalface_default.xml') # Cascade Classifier
+haar = cv2.CascadeClassifier('./model/haarcascade_frontalface_default.xml') # Cascade Classifier
 model_svm = pickle.load(open('./model/model_svm.pickle', mode='rb')) # ml model (SVM)
 pca_models = pickle.load(open('./model/pca_dict.pickle', mode='rb')) # pca dictionary
 model_pca = pca_models['pca']
@@ -23,7 +23,7 @@ def faceRecognitionPipeline(filepath, path = True):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     
     # Step 03 - Crop the face (using haar cascase classifier )
-    faces = haar.detectMultiScale(gray, 1.5, 3)
+    faces = haar.detectMultiScale(gray,1.5,3)
     predictions = []
     for x,y,w,h in faces:
         # cv2.rectangle(img, (x,y), (x+w, y+h), (0, 255, 0), 2)

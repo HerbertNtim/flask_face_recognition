@@ -18,6 +18,9 @@ def gender():
     # Save image in upload folder
     path = os.path.join(UPLOAD_FOLDER, filename)
     f.save(path)   
+    # Get predictions
+    pred_image, predictions = faceRecognitionPipeline(path)
+    print('ML model predicted successfully')
     
     
   return render_template('gender.html')
