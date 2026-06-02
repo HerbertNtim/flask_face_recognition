@@ -1,1 +1,78 @@
 {% extends "base.html" %}
+
+{% block title %}
+Gender Prediction | Face Recognition App
+{% endblock %}
+
+{% block bodyblock %}
+
+<div class="container py-5">
+
+    <!-- Header -->
+    <div class="text-center mb-4">
+        <h1 class="fw-bold">Gender Prediction</h1>
+
+        <p class="lead text-muted">
+            Upload an image (<strong>.jpg</strong>, <strong>.jpeg</strong>, <strong>.png</strong>)
+            and the system will detect faces and predict gender.
+        </p>
+    </div>
+
+    <!-- Upload Card -->
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+
+                    <h4 class="mb-3 text-center">Upload Image</h4>
+
+                    <form action="#"
+                          method="POST"
+                          enctype="multipart/form-data">
+
+                        <!-- File Input -->
+                        <div class="mb-3">
+                            <label for="image" class="form-label">
+                                Select Image
+                            </label>
+
+                            <input
+                                type="file"
+                                class="form-control"
+                                id="image"
+                                name="image"
+                                accept=".jpg, .jpeg, .png"
+                                required
+                            >
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                Predict Gender
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-lg-6">
+
+            <div class="alert alert-info text-center">
+                Supported formats: <strong>.jpg, .jpeg, .png</strong>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
