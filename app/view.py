@@ -5,3 +5,6 @@ def index():
 
 def app():
   return render_template('app.html')
+
+def gender():
+  return render_template('gender.html')
