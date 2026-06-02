@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 import cv2
 
 # Load the models
-haar = cv2.CascadeClassifier('../model/haarcascade_frontalface_default.xml') # Cascade Classifier
-model_svm = pickle.load(open('../model/model_svm.pickle', mode='rb')) # ml model (SVM)
-pca_models = pickle.load(open('../model/pca_dict.pickle', mode='rb')) # pca dictionary
+haar = cv2.CascadeClassifier('/model/haarcascade_frontalface_default.xml') # Cascade Classifier
+model_svm = pickle.load(open('./model/model_svm.pickle', mode='rb')) # ml model (SVM)
+pca_models = pickle.load(open('./model/pca_dict.pickle', mode='rb')) # pca dictionary
 model_pca = pca_models['pca']
 mean_face_array = pca_models['mean_face']
 
