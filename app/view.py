@@ -44,8 +44,8 @@ def gender():
       eigen_image_name = f'eigen_{i}.jpg'
       gray_path = os.path.join(PREDICT_FOLDER, gray_image_name)
       eigen_path = os.path.join(PREDICT_FOLDER, eigen_image_name)
-      matimg.imsave(gray_path, gray_image)
-      matimg.imsave(eigen_path, eigen_image)
+      matimg.imsave(gray_path, gray_image, cmap='gray')
+      matimg.imsave(eigen_path, eigen_image cmap='gray')
             
       # Save report
       report.append([gray_image_name, eigen_image_name, gender_name, score])
