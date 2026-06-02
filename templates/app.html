@@ -1,0 +1,60 @@
+{% extends "base.html" %} {% block title %} App | Face Recognition App {%
+endblock %} {% block bodyblock %}
+
+<div class="container py-5">
+  <!-- Page Header -->
+  <div class="text-center mb-5">
+    <h1 class="fw-bold">Face Recognition Application</h1>
+    <p class="lead text-muted">
+      Upload an image and let the system detect faces, recognize individuals,
+      and predict gender.
+    </p>
+  </div>
+
+  <!-- Workflow Section -->
+  <div class="card shadow-sm border-0 mb-5">
+    <div class="card-body p-4">
+      <h3 class="mb-3">How It Works</h3>
+
+      <p class="text-muted">
+        The application follows a simple pipeline: image upload, face detection,
+        feature extraction, recognition, and prediction.
+      </p>
+
+      <!-- Replace this with your workflow image -->
+      <div class="text-center border rounded p-5 bg-light">
+        <img
+          src="{{ url_for('static', filename='images/002.PNG') }}"
+          alt="Workflow Diagram"
+          class="img-fluid"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Face Recognition Form -->
+  <div class="card shadow-sm border-0">
+    <div class="card-body p-4">
+      <h3 class="mb-4">Upload Image</h3>
+
+      <form action="/predict" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="image" class="form-label"> Select an Image </label>
+
+          <input
+            type="file"
+            class="form-control"
+            id="image"
+            name="image"
+            accept="image/*"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Analyze Image</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
