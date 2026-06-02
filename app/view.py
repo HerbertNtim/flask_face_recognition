@@ -1,6 +1,7 @@
 import os
 import cv2
 from app.face_recognition import faceRecognitionPipeline
+import matplotlib.image as matimg
 from flask import render_template, request
 
 UPLOAD_FOLDER = os.path.join('static', 'upload')
@@ -30,7 +31,29 @@ def gender():
     
     cv2.imwrite(pred_path, pred_image)
     
-    print('ML model predicted successfully')
+    # Generate report
+    report = []
+    for i, obj in enumerate(predictions):
+      gray_image = obj['roi']
+      eigen_image = obj['eig_img'].reshape(100, 100)
+      gender_name = obj['prediction_name']
+      score = round(obj['score']*100, 2)
+      
+      # Save grayscale and eigen in predict folder
+      gray_image_name = f'roi_{i}.jpg'
+      eigen_image_name = f'eigen_{i}.jpg'
+      gray_path = os.path.join(PREDICT_FOLDER, gray_image_name)
+      eigen_path = os.path.join(PREDICT_FOLDER, eigen_image_name)
+      matimg.imsave(gray_path, gray_image)
+      matimg.imsave(eigen_path, eigen_image)
+            
+      # Save report
+      report.append([gray_image_name, eigen_image_name, gender_name, score])
     
     
   return render_template('gender.html')
+
+
+
+
+
