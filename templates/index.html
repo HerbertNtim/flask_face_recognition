@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block title %} Home | Face Recognition App {%
+endblock %} {% block bodyblock %}
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-4 fw-bold">Face Recognition Web Application</h1>
+
+        <p class="lead text-muted">
+          Recognize people gender, and manage facial data through a
+          simple web interface.
+        </p>
+      </div>
+
+      <div class="col-lg-6 text-center">
+        <img
+          src=""
+          class="img-fluid"
+          alt="Face Recognition"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container py-5">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h4>🧠 Recognition</h4>
+          <p>Identify people gender in real time.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+          <h4>📊 Management</h4>
+          <p>Manage and view face records.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
