@@ -49,9 +49,10 @@ def gender():
             
       # Save report
       report.append([gray_image_name, eigen_image_name, gender_name, score])
+    return render_template('gender.html', fileupload = True, report = report) # Post 
     
     
-  return render_template('gender.html')
+  return render_template('gender.html', fileupload = False) # GET
 
 
 
